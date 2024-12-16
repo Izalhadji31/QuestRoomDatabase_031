@@ -13,6 +13,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -25,6 +26,7 @@ import com.example.pertemuan10.ui.viewmodel.HomeMhsViewModel
 import com.example.pertemuan10.ui.viewmodel.HomeUiState
 import com.example.pertemuan10.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun HomeMhsView(
@@ -88,5 +90,16 @@ fun BodyHomeMhsView(
             }
         }
 
+        homeUiState.isError -> {
+            // Menampilkan pesan error menggunakan Snackbar
+            LaunchedEffect(homeUiState.errorMessage) {
+                coroutineScope.launch {
+                    snackbarHostState.showSnackbar(
+                        message = homeUiState.errorMessage,
+                        actionLabel = "Dismiss"
+                    )
+                }
+            }
+        }
     }
 }
