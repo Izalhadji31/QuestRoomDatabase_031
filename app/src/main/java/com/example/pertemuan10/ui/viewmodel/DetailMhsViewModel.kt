@@ -3,6 +3,7 @@ package com.example.pertemuan10.ui.viewmodel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pertemuan10.data.entity.Mahasiswa
 import com.example.pertemuan10.repository.RepositoryMhs
 import com.example.pertemuan10.ui.navigation.AlamatNavigasi
 import kotlinx.coroutines.delay
@@ -70,4 +71,16 @@ data class DetailUiState(
         get() = detailUiEvent == MahasiswaEvent()
     val isUiEventNotEmpty: Boolean
         get() = detailUiEvent != MahasiswaEvent()
+}
+
+// Memindahkan data dari entity ke UI
+fun Mahasiswa.toDetailUiEvent(): MahasiswaEvent {
+    return MahasiswaEvent(
+        nama = nama,
+        nim = nim,
+        jenisKelamin = jenisKelamin,
+        alamat = alamat,
+        kelas = kelas,
+        angkatan = angkatan
+    )
 }
