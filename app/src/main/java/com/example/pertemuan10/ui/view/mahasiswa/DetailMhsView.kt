@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -42,6 +43,7 @@ import com.example.pertemuan10.ui.viewmodel.DetailMhsViewModel
 import com.example.pertemuan10.ui.viewmodel.DetailUiState
 import com.example.pertemuan10.ui.viewmodel.HomeMhsViewModel
 import com.example.pertemuan10.ui.viewmodel.HomeUiState
+import com.example.pertemuan10.ui.viewmodel.PenyediaViewModel
 import com.example.pertemuan10.ui.viewmodel.toMahasiswaEntity
 import kotlinx.coroutines.launch
 
@@ -260,7 +262,7 @@ fun ItemDetailMhs(
             Spacer(modifier = Modifier.height(4.dp))
             ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat)
             Spacer(modifier = Modifier.height(4.dp))
-            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jeniskelamin)
+            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin)
             Spacer(modifier = Modifier.height(4.dp))
             ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas)
             Spacer(modifier = Modifier.height(4.dp))
