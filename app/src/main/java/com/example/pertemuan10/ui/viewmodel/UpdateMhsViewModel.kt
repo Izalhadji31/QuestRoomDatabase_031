@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pertemuan10.data.entity.Mahasiswa
 import com.example.pertemuan10.repository.RepositoryMhs
 import com.example.pertemuan10.ui.navigation.AlamatNavigasi
 import kotlinx.coroutines.flow.filterNotNull
@@ -82,5 +83,8 @@ class UpdateMhsViewModel(
         updateUIState = updateUIState.copy(snackBarMessage = null)
     }
 
+    fun Mahasiswa.toUiStateMhs(): MhsUIState = MhsUIState(
+        mahasiswaEvent = this.toDetailUiEvent(),
+    )
 }
 
