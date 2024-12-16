@@ -118,5 +118,15 @@ fun BodyHomeMhsView(
                 )
             }
         }
+        else -> {
+            // Menampilkan daftar mahasiswa
+            ListMahasiswa(
+                listMhs = homeUiState.listMhs,
+                onClick = onClick,
+                modifier = modifier
+            )
+        }
     }
 }
+
+
