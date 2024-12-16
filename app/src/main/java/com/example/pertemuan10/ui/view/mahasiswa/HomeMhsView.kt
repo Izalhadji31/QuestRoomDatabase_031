@@ -3,6 +3,7 @@ package com.example.pertemuan10.ui.view.mahasiswa
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.CircularProgressIndicator
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.pertemuan10.data.entity.Mahasiswa
 import com.example.pertemuan10.ui.customwidget.TopAppBar
 import com.example.pertemuan10.ui.viewmodel.HomeMhsViewModel
 import com.example.pertemuan10.ui.viewmodel.HomeUiState
@@ -129,4 +131,22 @@ fun BodyHomeMhsView(
     }
 }
 
-
+@Composable
+fun ListMahasiswa(
+    listMhs: List<Mahasiswa>,
+    modifier: Modifier = Modifier,
+    onClick: (String) -> Unit = {}
+) {
+    LazyColumn(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(8.dp)
+    ) {
+        items(listMhs) { mhs ->
+            CardMhs(
+                mhs = mhs,
+                onClick = { onClick(mhs.nim) }
+            )
+        }
+    }
+}
