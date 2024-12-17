@@ -1,6 +1,5 @@
 package com.example.pertemuan10.ui.navigation
 
-import InserMhsView
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -8,10 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-
+import com.example.pertemuan10.ui.view.mahasiswa.DestinasiInsert
 import com.example.pertemuan10.ui.view.mahasiswa.DetailMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.HomeMhsView
-
+import com.example.pertemuan10.ui.view.mahasiswa.InserMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.UpdateMhsView
 import androidx.compose.ui.Modifier
 import com.example.pertemuan10.ui.navigation.AlamatNavigasi.DestinasiDetail

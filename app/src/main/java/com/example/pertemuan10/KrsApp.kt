@@ -1,16 +1,14 @@
 package com.example.pertemuan10
 
 import android.app.Application
-import com.example.pertemuan10.dependencisinjection.ConstainerApp
-import com.example.pertemuan10.dependencisinjection.InterfaceContainerApp
+import com.example.pertemuan10.dependencisinjection.ContainerApp
 
 class KrsApp : Application() {
-    lateinit var  containerApp:  ConstainerApp // Fungsinya untuk menyimpan instance
+    lateinit var containerApp: ContainerApp // Fungsinya untuk menyimpan instance
 
     override fun onCreate() {
         super.onCreate()
-        containerApp = ConstainerApp(this) // Membuat instance dari ConstainerApp
-        // instance adalah object yang dibuat dari class
+        containerApp = ContainerApp(this) // Membuat instance ContainerApp
+        //Instance adalah obj yang dibuat dari class
     }
-
 }

@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+
 class DetailMhsViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryMhs: RepositoryMhs,
@@ -78,7 +79,7 @@ fun Mahasiswa.toDetailUiEvent(): MahasiswaEvent {
     return MahasiswaEvent(
         nama = nama,
         nim = nim,
-        jenisKelamin = jenisKelamin,
+        jenisKelamin = jeniskelamin,
         alamat = alamat,
         kelas = kelas,
         angkatan = angkatan

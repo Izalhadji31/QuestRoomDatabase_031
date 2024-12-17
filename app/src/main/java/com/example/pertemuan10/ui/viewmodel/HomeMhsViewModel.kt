@@ -5,17 +5,13 @@ import androidx.lifecycle.viewModelScope
 import com.example.pertemuan10.data.entity.Mahasiswa
 import com.example.pertemuan10.repository.RepositoryMhs
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.flow.stateIn
 
 class HomeMhsViewModel(
     private val repositoryMhs: RepositoryMhs
-) : ViewModel(){
+) : ViewModel() {
+
     val homeUIState: StateFlow<HomeUiState> = repositoryMhs.getAllMhs()
         .filterNotNull() // Pastikan repository mengembalikan data non-null
         .map { listMahasiswa ->

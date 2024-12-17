@@ -1,6 +1,5 @@
 package com.example.pertemuan10.ui.customwidget
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -24,7 +23,7 @@ fun TopAppBar(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(6.dp),
+            .padding(16.dp),
         contentAlignment = Alignment.Center // Pastikan konten di tengah
     ) {
         if (showBackButton) {
@@ -38,7 +37,7 @@ fun TopAppBar(
                 ) {
                     Text("Kembali")
                 }
-
+                Spacer(modifier = Modifier.weight(2f))
             }
         }
 

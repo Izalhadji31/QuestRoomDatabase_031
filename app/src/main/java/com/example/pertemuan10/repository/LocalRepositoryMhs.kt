@@ -4,9 +4,9 @@ import com.example.pertemuan10.data.dao.MahasiswaDao
 import com.example.pertemuan10.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
-class LocalRepositoryMhs (
+class LocalRepositoryMhs(
     private val mahasiswaDao: MahasiswaDao
-) : RepositoryMhs {
+) : RepositoryMhs{
     override suspend fun insertMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.insertMahasiswa(mahasiswa)
     }
@@ -14,15 +14,15 @@ class LocalRepositoryMhs (
         return mahasiswaDao.getAllMahasiswa()
     }
 
-    override fun getMhs(nim: String): Flow<Mahasiswa> {  //mengambil data mahasiswa berdasarkan nim
+    override fun getMhs(nim: String): Flow<Mahasiswa> {
         return mahasiswaDao.getMahasiswa(nim)
     }
 
-    override suspend fun deleteMhs(mahasiswa: Mahasiswa) { //menghapus data mahasiswa
+    override suspend fun deleteMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.deleteMahasiswa(mahasiswa)
     }
 
-    override suspend fun updateMhs(mahasiswa: Mahasiswa) { //memperbarui data mahasiswa dalam database
+    override suspend fun updateMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.updateMahasiswa(mahasiswa)
     }
 }

@@ -15,4 +15,5 @@ interface AlamatNavigasi {
         const val NIM = "nim"
         val routeWithArg = "$route/{$NIM}"
     }
+
 }

@@ -16,7 +16,8 @@ import kotlinx.coroutines.launch
 class UpdateMhsViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryMhs: RepositoryMhs
-) : ViewModel(){
+) : ViewModel() {
+
     // Deklarasi state UI
     var updateUIState by mutableStateOf(MhsUIState())
         private set
@@ -87,4 +88,3 @@ class UpdateMhsViewModel(
         mahasiswaEvent = this.toDetailUiEvent(),
     )
 }
-
